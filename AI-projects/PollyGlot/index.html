@@ -7,12 +7,12 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>PollyGlot</h1>
-      <p>Perfect translation every time</p>
+      <p class="subheadline">Perfect translation every time</p>
       <img src="parrot.png" alt="parrot">
     </header>
     <main>
@@ -23,16 +23,25 @@
         </div>
         <label for="languages">Select a language 👇</label>
         <div class="radio-option">
-          <input type="radio" name="language" id="language" value="french"> French
+          <input type="radio" name="language" id="language" value="french"> 
+          <span class="radio-text">
+            French
+          </span>
           <img src="fr-flag.png" alt="France's flag">
         </div>
         <div class="radio-option">
-          <input type="radio" name="language" id="language" value="spanish"> Spanish
+          <input type="radio" name="language" id="language" value="spanish">
+          <span class="radio-text">
+            Spanish
+          </span>
           <img src="sp-flag.png" alt="Spain's flag">
         </div>
         <div class="radio-option">
           <input type="radio" name="language" id="language" value="french">
-          <img src="jpn-flag.png" alt="Japan's flag"> Japanese
+          <img src="jpn-flag.png" alt="Japan's flag">
+          <span class="radio-text">
+            Japanese
+          </span>
         </div>
 
         <button class="cta">Translate</button>

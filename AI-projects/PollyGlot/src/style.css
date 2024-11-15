@@ -10,3 +10,38 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+header {
+  background-image: url("../public/worldmap.png");
+}
+
+.cta, .subheadline {
+  color: white;
+}
+
+/* typography */
+
+textarea::placeholder,
+label,
+.radio-text,
+.cta{   
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subheadline {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+label {
+  color: var(--primary-color);
+}
