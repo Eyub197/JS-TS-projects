@@ -13,40 +13,43 @@
     <header>
       <h1>PollyGlot</h1>
       <p class="subheadline">Perfect translation every time</p>
-      <img src="parrot.png" alt="parrot">
+      <img src="parrot.png" alt="parrot" class="parrot">
     </header>
-    <main>
-      <form>
-        <div class="text-area">
+    <span>
+      <main>
+        <form>
           <label for="text">Text to translate 👇</label>
-          <textarea id="text" placeholder="How are you?"></textarea>
-        </div>
-        <label for="languages">Select a language 👇</label>
-        <div class="radio-option">
-          <input type="radio" name="language" id="language" value="french"> 
-          <span class="radio-text">
-            French
-          </span>
-          <img src="fr-flag.png" alt="France's flag">
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="language" id="language" value="spanish">
-          <span class="radio-text">
-            Spanish
-          </span>
-          <img src="sp-flag.png" alt="Spain's flag">
-        </div>
-        <div class="radio-option">
-          <input type="radio" name="language" id="language" value="french">
-          <img src="jpn-flag.png" alt="Japan's flag">
-          <span class="radio-text">
-            Japanese
-          </span>
-        </div>
+          <textarea rows="5" id="text" placeholder="How are you?"></textarea>
+          
+          <label for="languages">Select a language 👇</label>
 
-        <button class="cta">Translate</button>
+          <section class="languages-anwser">
+            <div class="radio-option">
+              <input type="radio" name="language" id="language" value="french"> 
+              <span class="radio-text">French</span>
+              <img src="fr-flag.png" alt="France's flag">
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" name="language" id="language" value="spanish">
+              <span class="radio-text"> Spanish</span>
+              <img src="sp-flag.png" alt="Spain's flag">
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" name="language" id="language" value="french">
+              <span class="radio-text">
+                Japanese
+              </span>
+              <img src="jpn-flag.png" alt="Japan's flag">
+            </div>  
+          </section>
+
+          <button class="cta">Translate</button>
+        
         </form>
-    </main>
+
+      </main>
     <script type="module" src="/src/main.ts"></script>
-  </body>
+  </div>
 </html>
