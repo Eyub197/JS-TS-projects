@@ -1,0 +1,96 @@
+z:root {
+  --primary-color: #035A9D;
+  --secondary-color: #32CD32;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  background-image: url("/worldmap.png");
+  background-position: center;
+}
+
+
+/* button */
+
+
+/* typography */
+
+h1, .subheadline {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.subheadline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+
+
+/* layout */
+
+header {
+  display: grid;
+  grid-template-columns: 110px auto;
+  grid-template-areas: 
+    "parrot headline"
+    "parrot subheadline";
+  padding: 4em 2.25em ;
+}
+
+.parrot {
+  grid-area: parrot;
+  width: 95px;
+  height: 85px;
+  object-fit: cover;
+}
+
+h1 {
+  grid-area: headline;
+}
+
+.subheadline {
+  margin-top: -1.2em;
+  grid-area: subheadline;
+}
+
+main {
+  padding: 2em 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em auto;
+  text-align: center;
+  border: 4px solid #252F42;
+  border-radius: 1.5em;
+  padding: 1.87em 1.5em 2.875em;
+}
+
+/* .radio-option img {
+  border: 1px solid #999999;
+} */
+
+/* loading circle */
+
+/* utilities */
+
+.hidden { display: none; }
+
