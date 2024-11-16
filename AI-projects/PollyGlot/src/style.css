@@ -41,9 +41,10 @@ header {
 /* typography */
 
 textarea::placeholder,
+textarea,
 label,
 .radio-text,
-.cta{   
+.btn{   
   font-weight: bold;
 }
 
@@ -112,6 +113,7 @@ form {
 
 textarea {
   resize: none;
+  font-family: inherit;
   font-size: 1.25rem;
   padding: 1em 0.75em;
   background-color: #EFF0F4;

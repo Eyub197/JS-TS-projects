@@ -11,17 +11,27 @@ const languagesAnswerSection = document.querySelector(".languages-answer")
 
 let translatedText: string
 
+const manageLoading = (isLoading: boolean): void => {
+    if(isLoading) {
+        languagesAnswerSection!.innerHTML = "<p>Loading...</p>"
+        translateButton!.textContent = "Translating..."
+    } else {
+        languagesAnswerSection!.innerHTML = ""
+    }
+}
+
 const createPrompt = async () => {
     const formData = new FormData(form!)
     const prompt = (`Hello, can you translate this text ${formData.get("text")} into ${formData.get("language")} language? I want only the translated text as a response.`)
+    manageLoading(true)
     const result = await model.generateContent(prompt)
     return result.response.text()
 }
 
 const renderTranslation = () => {
+    document.querySelector('label[for="text"]')!.textContent = "Original text 👇"
     document.querySelector('label[for="languages"]')!.textContent = "Your translation 👇"
     if(languagesAnswerSection) {
-        languagesAnswerSection.innerHTML = ''
         const answer = document.createElement("textarea")
         answer.rows = 5
         answer.classList.add("width-100")
@@ -39,10 +49,12 @@ form?.addEventListener("submit", event => {
 translateButton?.addEventListener("click", async event => {
     event.preventDefault()
     translatedText = await createPrompt()
+    manageLoading(false)
     renderTranslation()
 })
 
 resetButton?.addEventListener("click", () => {
+    document.querySelector('label[for="text"]')!.textContent = "Text to translate 👇"
     document.querySelector('label[for="languages"]')!.textContent = "Select language 👇"
     if(languagesAnswerSection) {
         languagesAnswerSection.innerHTML = `
