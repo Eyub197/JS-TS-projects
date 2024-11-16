@@ -9,7 +9,7 @@ const translateButton = document.querySelector(".cta")
 const resetButton = document.querySelector(".reset")
 const languagesAnswerSection = document.querySelector(".languages-answer") 
 
-let translatedText: string
+let aiResponse: string
 
 const manageLoading = (isLoading: boolean): void => {
     if(isLoading) {
@@ -21,36 +21,42 @@ const manageLoading = (isLoading: boolean): void => {
     }
 }
 
-const createPrompt = async () => {
+const createPrompt = async () : Promise<string> => {
     const formData = new FormData(form!)
     const prompt = (`Hello, can you translate this text ${formData.get("text")} into ${formData.get("language")} language? I want only the translated text as a response.`)
     manageLoading(true)
-    const result = await model.generateContent(prompt)
-    return result.response.text()
+
+    try {
+        const result = await model.generateContent(prompt)
+        return result.response.text()
+    }
+    catch (error : any) {
+        console.log(error.message)
+        return error.message
+    }
+    
 }
 
-const renderTranslation = () => {
+const renderTranslation = () : void => {
     document.querySelector('label[for="text"]')!.textContent = "Original text 👇"
     document.querySelector('label[for="languages"]')!.textContent = "Your translation 👇"
-    if(languagesAnswerSection) {
-        languagesAnswerSection.innerHTML = ""
-        const answer = document.createElement("textarea")
-        answer.rows = 5
-        answer.classList.add("width-100")
-        answer.textContent = translatedText
-        languagesAnswerSection.appendChild(answer)
-    }
+    
+    languagesAnswerSection!.innerHTML = ""
+    const answer = document.createElement("textarea")
+    answer.rows = 5
+    answer.classList.add("width-100")
+    answer.textContent = aiResponse
+    languagesAnswerSection!.appendChild(answer)
+    
     translateButton?.classList.add("hidden")
     resetButton?.classList.remove("hidden")
 } 
 
-form?.addEventListener("submit", event => {
-    event.preventDefault()
-})
+form?.addEventListener("submit", event => { event.preventDefault() })
 
 translateButton?.addEventListener("click", async event => {
     event.preventDefault()
-    translatedText = await createPrompt()
+    aiResponse = await createPrompt()
     manageLoading(false)
     renderTranslation()
 })
