@@ -13,10 +13,11 @@ let translatedText: string
 
 const manageLoading = (isLoading: boolean): void => {
     if(isLoading) {
-        languagesAnswerSection!.innerHTML = "<p>Loading...</p>"
+        document.querySelector(".loading")?.classList.remove("hidden")
         translateButton!.textContent = "Translating..."
     } else {
-        languagesAnswerSection!.innerHTML = ""
+        document.querySelector(".loading")?.classList.add("hidden")
+        translateButton!.textContent = "Translate"
     }
 }
 
@@ -32,6 +33,7 @@ const renderTranslation = () => {
     document.querySelector('label[for="text"]')!.textContent = "Original text 👇"
     document.querySelector('label[for="languages"]')!.textContent = "Your translation 👇"
     if(languagesAnswerSection) {
+        languagesAnswerSection.innerHTML = ""
         const answer = document.createElement("textarea")
         answer.rows = 5
         answer.classList.add("width-100")
