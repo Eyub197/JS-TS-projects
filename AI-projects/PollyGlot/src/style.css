@@ -16,17 +16,19 @@ header {
   background-position: center;
 }
 
-.cta, .subheadline {
+.btn, .subheadline {
   color: white;
+  text-transform: capitalize;
 }
 
-.cta, textarea {
+.btn, textarea {
   border: none;
 }
 
 /* button */
 
-.cta {
+.btn {
+  cursor: pointer;
   margin-top: 2rem;
   padding: 0.6em;
   font-family: inherit;
@@ -129,3 +131,8 @@ textarea {
   border: 1px solid #999999;
 }
 
+/* utilities */
+
+.hidden { display: none; }
+
+.width-100 { width: 100%; }
