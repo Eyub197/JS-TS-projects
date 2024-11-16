@@ -20,29 +20,29 @@
         <form>
   
           <label for="text">Text to translate 👇</label>
-          <textarea required rows="5" class="user-input" name="text" id="text" placeholder="How are you?"></textarea>
+          <textarea rows="5" class="user-input" name="text" id="text" placeholder="How are you?"></textarea>
           
           <label for="languages">Select a language 👇</label>
 
           <div class="loading hidden"></div>
           <section class="languages-answer">
-            <div class="radio-option">
+            <label class="radio-option">
               <input type="radio" name="language" id="language" value="french"> 
               <span class="radio-text">French</span>
               <img src="fr-flag.png" alt="France's flag">
-            </div>
+            </label>
             
-            <div class="radio-option">
+            <label class="radio-option">
               <input type="radio" name="language" id="language" value="spanish">
-              <span class="radio-text">Spanish</span>
+              <span class="radio-text"> Spanish</span>
               <img src="sp-flag.png" alt="Spain's flag">
-            </div>
+            </label>
             
-            <div class="radio-option">
+            <label class="radio-option">
               <input type="radio" name="language" id="language" value="japanese">
-              <span class="radio-text">Japanese</span>
+              <span class="radio-text"> Japanese</span>
               <img src="jpn-flag.png" alt="Japan's flag">
-            </div>  
+            </label>  
           </section>
 
           <button class="btn cta">Translate</button>

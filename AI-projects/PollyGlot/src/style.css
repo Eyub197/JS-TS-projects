@@ -64,7 +64,7 @@ h1 {
   font-weight: 600;
 }
 
-label {
+label[for="text"], label[for="languages"] {
   color: var(--primary-color);
 }
 
