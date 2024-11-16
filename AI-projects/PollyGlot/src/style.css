@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-image: url("../public/worldmap.png");
+  background-image: url("/worldmap.png");
   background-position: center;
 }
 
