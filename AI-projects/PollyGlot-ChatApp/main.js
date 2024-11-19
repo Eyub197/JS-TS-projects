@@ -6,6 +6,10 @@ const model = genAi.getGenerativeModel({model: "gemini-1.5-pro"})
 
 const form = document.querySelector("form") 
 
+
+// You need a method to create a  prompt  and add it to the dom and then to create a user element and add to the dom to 
+// that is really it. It will overflow the container and whoale you have it 
+
 const manageLoading = (isLoading) => {
   //to be changed
 }

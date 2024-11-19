@@ -22,6 +22,20 @@ header {
 
 /* typography */
 
+.message {
+    /* use it for the same padding and the font-weight */ 
+  
+}
+
+.user-message-container {
+  /* Self-explanatory */
+}
+
+.user-message {
+  /* implement class user message so yea we can reuse the styles for every messeage */
+  
+}
+
 h1, .subheadline {
   margin: 0;
 }
