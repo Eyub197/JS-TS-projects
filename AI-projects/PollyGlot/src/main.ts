@@ -37,15 +37,22 @@ const createPrompt = async () : Promise<string> => {
     
 }
 
+const createDomAnswer = () : HTMLElement => {
+    const answerContainer = document.createElement("div")
+    answerContainer.classList.add("answer-container")
+    const answerText = document.createElement("p")
+    answerText.classList.add("answer-text")
+    answerText.textContent = aiResponse
+    answerContainer.appendChild(answerText)
+    return answerContainer
+}
+
 const renderTranslation = () : void => {
     document.querySelector('label[for="text"]')!.textContent = "Original text 👇"
     document.querySelector('label[for="languages"]')!.textContent = "Your translation 👇"
     
     languagesAnswerSection!.innerHTML = ""
-    const answer = document.createElement("textarea")
-    answer.rows = 5
-    answer.classList.add("width-100")
-    answer.textContent = aiResponse
+    const answer = createDomAnswer()
     languagesAnswerSection!.appendChild(answer)
     
     translateButton?.classList.add("hidden")

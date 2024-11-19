@@ -25,6 +25,13 @@ header {
   border: none;
 }
 
+textarea, .answer-container {
+  background-color: #EFF0F4;
+  border-radius: 0.5em;
+  padding: 1em 0.75em;
+}
+
+
 /* button */
 
 .btn {
@@ -44,12 +51,20 @@ textarea::placeholder,
 textarea,
 label,
 .radio-text,
-.btn{   
+.btn, .answer-text{   
   font-weight: bold;
 }
 
 h1, .subheadline {
   margin: 0;
+}
+
+label[for="text"], label[for="languages"] {
+  color: var(--primary-color);
+}
+
+.answer-text, textarea {
+  font-size: 1.25rem;
 }
 
 h1 {
@@ -64,8 +79,8 @@ h1 {
   font-weight: 600;
 }
 
-label[for="text"], label[for="languages"] {
-  color: var(--primary-color);
+.answer-text {
+  text-align: left;
 }
 
 
@@ -114,10 +129,6 @@ form {
 textarea {
   resize: none;
   font-family: inherit;
-  font-size: 1.25rem;
-  padding: 1em 0.75em;
-  background-color: #EFF0F4;
-  border-radius: 0.5em;
 }
 
 .radio-option {
@@ -152,6 +163,9 @@ textarea {
 
 /* utilities */
 
-.hidden { display: none; }
+.answer-container {
+  width: 100%;
+  height: 170px;
+}
 
-.width-100 { width: 100%; }
+.hidden { display: none; }
