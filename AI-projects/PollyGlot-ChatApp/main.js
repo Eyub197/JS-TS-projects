@@ -10,7 +10,7 @@ const chat = model.startChat({
   history: [
     {
       role: "user",
-      parts:[{text: "Can you help me with translating text" }]
+      parts:[{text: "Can you help me with translating text into this language" }]
     },
     {
       role: "model",
@@ -18,6 +18,8 @@ const chat = model.startChat({
     }
   ]
 })
+
+let aiTranslation
 
 const renderUserMessage = () => {
   const userMessageContainer = document.createElement("div") 
@@ -28,36 +30,27 @@ const renderUserMessage = () => {
   document.querySelector(".messages-container").appendChild(userMessageContainer)
 }
 
-
-const manageLoading = (isLoading) => {
-  //to be changed
-}
-
 const createPrompt = async () => {
-  //we need to add
   const formData = new FormData(form)
-  const userPrompt = await chat.sendMessage(`Hello, can you translate this text ${formData.get("text")} into ${formData.get("language") || "Bulgarian"} language?, the answer should contain only the translated words nothing else `)
-  console.log(userPrompt.response.text())
-  try {
-    const result = await model.generateContent(prompt)
-    return result.response.text()
-  }
-  catch (error) {
-    console.log(error.message)
-      return error.message
-  }   
+  const result = await chat.sendMessage(`Can you translate ${document.querySelector('input[type="text"]').value} to this language ${formData.get("language")} language? I want only the translated text as a response.`)
+  aiTranslation = result.response.text()
+  return result.response.text()
 }
 
-const renderTranslation = () => {  
-  //to be changed
+const renderTranslation = async () => {  
+  const aiMessageContainer = document.createElement("div") 
+  aiMessageContainer.classList.add("ai-message-container", "message")
+  const aiResponse = document.createElement("p")
+  aiResponse.textContent = await createPrompt()
+  aiMessageContainer.appendChild(aiResponse)
+  document.querySelector(".messages-container").appendChild(aiMessageContainer)
 } 
 
 form?.addEventListener("submit", event => { event.preventDefault() })
 
 document.querySelector("button").addEventListener("click", async () => {
   renderUserMessage()
-  await createPrompt()
-  renderTranslation()
+  await renderTranslation()
 })
 
 
