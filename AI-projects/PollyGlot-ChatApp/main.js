@@ -14,7 +14,7 @@ const chat = model.startChat({
     },
     {
       role: "model",
-      parts:[{text: "Select the language you me to translate into, type your text and hit send!"}]
+      parts:[{text: "Select the language you want me to translate into, type your text and hit send!"}]
     }
   ]
 })
@@ -40,8 +40,7 @@ const createPrompt = async () => {
   catch (error) {
       console.log(error.message)
       return error.message
-  }
-    
+  }   
 }
 
 const renderTranslation = () => {  
@@ -50,7 +49,7 @@ const renderTranslation = () => {
 
 form?.addEventListener("submit", event => { event.preventDefault() })
 
-document.querySelector("button"),addEventListener("click", async () => {
+document.querySelector("button").addEventListener("click", async () => {
   await createPrompt()
 })
 
