@@ -1,4 +1,4 @@
-z:root {
+:root {
   --primary-color: #035A9D;
   --secondary-color: #32CD32;
 }
@@ -22,18 +22,17 @@ header {
 
 /* typography */
 
-.message {
-    /* use it for the same padding and the font-weight */ 
-  
-}
 
 .user-message-container {
   /* Self-explanatory */
 }
 
 .user-message {
-  /* implement class user message so yea we can reuse the styles for every messeage */
-  
+  /* implement class user message so yea we can reuse the styles for every messeage */ 
+}
+
+.ai-message, .subheadline{
+  color: white;
 }
 
 h1, .subheadline {
@@ -50,13 +49,15 @@ h1 {
 .subheadline {
   font-size: 0.75rem;
   font-weight: 600;
-  color: white;
   text-transform: capitalize;
 }
 
 
 
 /* layout */
+
+
+
 
 header {
   display: grid;
@@ -83,8 +84,28 @@ h1 {
   grid-area: subheadline;
 }
 
-main {
+.wrapper {
   padding: 2em 1em;
+}
+
+main {
+  border: 4px solid #252F42;
+  border-radius: 1.5em;
+}
+
+.messages-container{
+  padding: 1.87em 1.5em 0em;
+}
+
+.message {
+  padding: 0.75em 1em;
+  font-weight: bold;
+  border-radius: 0.625em;
+}
+
+.ai-message-container {
+  background-color: var(--primary-color);
+  border-top-right-radius: 0.125em;
 }
 
 form {
@@ -93,9 +114,8 @@ form {
   gap: 1em;
   margin: 2em auto;
   text-align: center;
-  border: 4px solid #252F42;
-  border-radius: 1.5em;
-  padding: 1.87em 1.5em 2.875em;
+  padding: 0em 1.5em 1%;
+  border-top: none;
 }
 
 /* .radio-option img {
