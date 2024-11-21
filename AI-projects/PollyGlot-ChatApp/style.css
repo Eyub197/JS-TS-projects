@@ -42,19 +42,13 @@ input:focus {
 }
 
 button {
-  background: none;
+  cursor: pointer;
 }
 
 /* typography */
 
 
-.user-message-container {
-  /* Self-explanatory */
-}
 
-.user-message {
-  /* implement class user message so yea we can reuse the styles for every messeage */ 
-}
 
 .ai-message, .subheadline{
   color: white;
@@ -77,18 +71,13 @@ h1 {
   text-transform: capitalize;
 }
 
-
-
 /* layout */
-
-
-
 
 header {
   display: grid;
   grid-template-columns: 110px auto;
   grid-template-areas: 
-    "parrot headline"
+  "parrot headline"
     "parrot subheadline";
   padding: 4em 2.25em ;
 }
@@ -118,11 +107,12 @@ main {
   border-radius: 1.5em;
 }
 
-.messages-container{
+.messages-container {
   padding: 1.87em 1.5em 0em;
 }
 
 .message {
+  margin-bottom: 1em;
   padding: 0.75em 1em;
   font-weight: bold;
   border-radius: 0.625em;
@@ -131,6 +121,11 @@ main {
 .ai-message-container {
   background-color: var(--primary-color);
   border-top-right-radius: 0.125em;
+}
+
+.user-message-container {
+  background-color: var(--secondary-color);
+  border-top-left-radius: 2px;
 }
 
 form {

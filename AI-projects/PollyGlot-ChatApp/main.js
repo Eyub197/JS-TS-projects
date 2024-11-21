@@ -19,10 +19,15 @@ const chat = model.startChat({
   ]
 })
 
+const renderUserMessage = () => {
+  const userMessageContainer = document.createElement("div") 
+  userMessageContainer.classList.add("user-message-container", "message")
+  const userMessage = document.createElement("p")
+  userMessage.textContent = document.querySelector('input[type="text"]').value
+  userMessageContainer.appendChild(userMessage)
+  document.querySelector(".messages-container").appendChild(userMessageContainer)
+}
 
-
-// You need a method to create a  prompt  and add it to the dom and then to create a user element and add to the dom to 
-// that is really it. It will overflow the container and whoale you have it 
 
 const manageLoading = (isLoading) => {
   //to be changed
@@ -31,14 +36,14 @@ const manageLoading = (isLoading) => {
 const createPrompt = async () => {
   //we need to add
   const formData = new FormData(form)
-  const userPrompt = await chat.sendMessage(`Hello, can you translate this text ${formData.get("text")} into ${formData.get("language")} language? `)
+  const userPrompt = await chat.sendMessage(`Hello, can you translate this text ${formData.get("text")} into ${formData.get("language") || "Bulgarian"} language?, the answer should contain only the translated words nothing else `)
   console.log(userPrompt.response.text())
   try {
-      const result = await model.generateContent(prompt)
-      return result.response.text()
+    const result = await model.generateContent(prompt)
+    return result.response.text()
   }
   catch (error) {
-      console.log(error.message)
+    console.log(error.message)
       return error.message
   }   
 }
@@ -50,7 +55,9 @@ const renderTranslation = () => {
 form?.addEventListener("submit", event => { event.preventDefault() })
 
 document.querySelector("button").addEventListener("click", async () => {
+  renderUserMessage()
   await createPrompt()
+  renderTranslation()
 })
 
 
