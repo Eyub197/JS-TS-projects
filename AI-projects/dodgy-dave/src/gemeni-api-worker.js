@@ -10,13 +10,13 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-
 export default {
 	async fetch(request, env, ctx) {
 	const genAI = new GoogleGenerativeAI(env.GEMENI_AI_API_KEY);
-	const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-   const prompt = "Write a story about a magic backpack.";
-	const result = await model.generateContent(prompt);
-		return new Response(result.response.text());
-	},
-};
+	const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+   	const prompt = "Write a story about a magic backpack."
+	
+	const result = await model.generateContent(prompt)
+		return new Response(result.response.text())
+	}
+}
