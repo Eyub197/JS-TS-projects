@@ -1,1 +1,0 @@
-This is a stock predictor called Dodgy Dave. The main goal of this project is using cloudflare workers soo the ai's api key wont be exposed to the client
