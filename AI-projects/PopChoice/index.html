@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <main>
+    <main class="vh100-grid">
       <header>
         <svg width="99" height="108" viewBox="0 0 99 108" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect width="99" height="108" fill="url(#pattern0_15602_107)"/>
@@ -23,7 +23,7 @@
         </svg>
         <h1>PopChoice</h1>  
       </header>
-      <form>
+      <form class="people-time-form">
         <div class="mini-grid">
           <label class="first-labels" for="people-count">How many people?</label>
           <input type="text" name="people-count" id="people-count">
@@ -36,5 +36,25 @@
       </form>
     </main>
     <script type="module" src="/main.js"></script>
+
+    <!-- testing js rendered html -->
+    <label for="favourite-movie">What’s your favorite movie and why?</label>
+    <textarea name="favourite-movie" id="favourite-movie"></textarea>
+
+    <label for="film-era">Are you in the mood for something new or a classic?</label>
+    <input type="radio" name="film-era" value="New" id="film-era"> New
+    <input type="radio" name="film-era" value="Classic"> Classic
+
+    <label for="film-type">What are you in the mood for?</label>
+    <input type="radio" name="film-type" id="film-type"> Fun
+    <input type="radio" name="film-type" id=""> Serious
+    <input type="radio" name="film-type" id=""> Inspiring
+    <input type="radio" name="film-type" id=""> Scary
+
+    <label for="favourite-film-person">Which famous film person would you love to be stranded on an island with and why?</label>
+    <textarea name="favourite-film-person" id="favourite-film-person"></textarea>
+
+
   </body>
+  
 </html>

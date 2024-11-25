@@ -44,9 +44,6 @@ h1 {
 /* layout */
 
 main {
-    display: grid;
-    place-content: center stretch;
-    min-height: 100vh;
     text-align: center;
     padding: 2em;
 }
@@ -73,12 +70,18 @@ input {
 
 input[type="text"] {
     padding: 1.4em;
+    color: white;
 }
 
 
 /* utils */
 
 .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.vh100-grid {
     display: grid;
     grid-template-columns: 1fr;
 }
