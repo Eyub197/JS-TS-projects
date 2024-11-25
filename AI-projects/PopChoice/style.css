@@ -1,0 +1,84 @@
+:root {
+    --primary-color: #3B4877;
+    --cta-color: #51E08A;
+    --background-color: #000C36;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+    background-color: var(--background-color);
+    color: white;
+}
+
+button, 
+textarea,
+input[type="text"] {
+    font-family: inherit;
+    border-radius: 0.3rem;
+    border: none;
+}
+
+
+/* btn */
+
+button {
+    font-size: 1.875rem;
+    padding: 0.5em 1em;
+    background-color: var(--cta-color);
+}
+
+
+/* types */
+
+h1 {
+    font-family: "Carter One", cursive;
+    font-size: 2.8125rem;
+    margin-top: 0;
+}
+
+
+/* layout */
+
+main {
+    display: grid;
+    place-content: center stretch;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+
+/* forms */
+
+.first-labels{
+    font-size: 1.125rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 0.4em;
+}
+
+input {
+    background-color: var(--primary-color);
+}
+
+input[type="text"] {
+    padding: 1.4em;
+}
+
+
+/* utils */
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
