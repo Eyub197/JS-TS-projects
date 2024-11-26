@@ -44,7 +44,7 @@
             <input type="radio" name="film-era" value="new" id="new"> New
           </label>
           <label class="custom-radio classic" for="classic">
-            <input type="radio" name="film-era" value="classic" id="classic"> Classic
+            <input class="classic-input" type="radio" name="film-era" value="classic" id="classic"> Classic
           </label>
         </div>
       </div>
@@ -52,18 +52,20 @@
       
       <div class="custom-radio-wrapper-2">
         <label for="film-type">What are you in the mood for?</label>
-        <label class="custom-radio" for="funny">
-          <input type="radio" name="film-type" id="funny" >Fun
-        </label>
-        <label class="custom-radio" for="serious">
-          <input type="radio" name="film-type" id="serious"> Serious
-        </label>
-        <label class="custom-radio" for="inspiring">
-          <input type="radio" name="film-type" id="inspiring"> Inspiring
-        </label>
-        <label class="custom-radio" for="scary">
-          <input type="radio" name="film-type" id="scary"> Scary
-        </label>
+        <div class="film-types">
+          <label class="custom-radio" for="funny">
+            <input type="radio" name="film-type" id="funny" >Fun
+          </label>
+          <label class="custom-radio" for="serious">
+            <input class="serious-input" type="radio" name="film-type" id="serious"> Serious
+          </label>
+          <label class="custom-radio" for="inspiring">
+            <input class="inspiring-input" type="radio" name="film-type" id="inspiring"> Inspiring
+          </label>
+          <label class="custom-radio" for="scary">
+            <input class="scary-input" type="radio" name="film-type" id="scary"> Scary
+          </label>
+        </div>
       </div>
 
       <label for="favorite-film-person">Which famous film person would you love to be stranded on an island with and why?</label>

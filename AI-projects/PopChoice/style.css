@@ -56,22 +56,22 @@ form {
 
 .custom-radio-wrapper-1, .custom-radio-wrapper-2 {
     display: grid;
-}
-
-.custom-radio-wrapper-1 {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-template-areas: 
-        "mood mood"
-        "new-classic new-classic";
-    gap: 0.2em;
+        "question"
+        "answers";
+    gap: 0.45em;
 }
 
-.new-classic {
-   grid-area: new-classic;
+.new-classic, .film-types {
+   grid-area: answers;
    display: flex;
    gap: 1em;
 }
 
+.film-types {
+    /* maybe more gap */
+}
 
 /* forms */
 
@@ -133,18 +133,21 @@ input[type="radio"]::before {
     z-index: -2;
 }
 
-input[type="radio"]:checked::before {
-    transform: scale(1);
+input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid var(--cta-color);
+    outline-offset: max(2px, 0.15em);
 }
+
+input[type="radio"]:checked::before { transform: scale(1); }
+
+input.classic-input, input.classic-input::before { width: 4.7em; }
+input.serious-input, input.serious-input::before { width: 4.9em; }
+input.inspiring-input, input.inspiring-input::before { width: 5.8em; }
+input.scary-input, input.scary-input::before { width: 4.2em;  }
 
 /* utils */
 
-.mini-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.vh100-grid {
+.mini-grid, .vh100-grid {
     display: grid;
     grid-template-columns: 1fr;
 }
