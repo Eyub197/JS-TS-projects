@@ -4,7 +4,7 @@
     --background-color: #000C36;
 }
 
-* { box-sizing: border-box; }
+*, *::before { box-sizing: border-box; }
 
 body {
     padding: 0;
@@ -32,7 +32,7 @@ button {
 }
 
 
-/* types */
+/* typography */
 
 h1 {
     font-family: "Carter One", cursive;
@@ -54,8 +54,30 @@ form {
     gap: 1.5em;
 }
 
+.custom-radio-wrapper-1, .custom-radio-wrapper-2 {
+    display: grid;
+}
+
+.custom-radio-wrapper-1 {
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+        "mood mood"
+        "new-classic new-classic";
+    gap: 0.2em;
+}
+
+.new-classic {
+   grid-area: new-classic;
+   display: flex;
+   gap: 1em;
+}
+
 
 /* forms */
+
+.person-form {
+    padding: 2em;
+}
 
 .first-labels{
     font-size: 1.125rem;
@@ -64,7 +86,7 @@ form {
     margin-bottom: 0.4em;
 }
 
-input {
+input, textarea {
     background-color: var(--primary-color);
 }
 
@@ -73,6 +95,47 @@ input[type="text"] {
     color: white;
 }
 
+textarea {
+    resize: none;
+    padding: 0.75rem;
+}
+
+.custom-radio {
+    font-size: 0.875rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 0.7em auto;
+} 
+
+input[type="radio"] {
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    display: grid;
+    place-content: center;
+    margin: 0;
+    width: 3rem;
+    height: 1.3rem;
+    font: inherit;
+    transform: translateY(-0.2em);
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 3.2rem;
+    height: 1.2rem;
+    border-radius: 0.3rem;
+    box-shadow: inset 2em 4em var(--cta-color);
+    transition: 120ms transform ease-in-out;
+    transform: scale(0);
+    z-index: -2;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
 
 /* utils */
 
