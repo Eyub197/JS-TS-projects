@@ -17,3 +17,4 @@ const url = import.meta.env.VITE_SUPABASE_URL
 if(!url) { throw new Error("Missing SUPABASE_URL") }
 
 export const supabase = createClient(url, privateKey)
+

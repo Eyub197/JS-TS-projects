@@ -12,7 +12,9 @@
     "vite": "^5.4.10"
   },
   "dependencies": {
+    "@langchain/core": "^0.3.19",
     "@supabase/supabase-js": "^2.46.1",
+    "langchain": "^0.3.6",
     "openai": "^4.73.0"
   }
 }

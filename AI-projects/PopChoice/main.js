@@ -98,5 +98,4 @@ button.addEventListener('click', () => {
     createPages(Number(peopleCountInput.value))
 })
 
-// TODO 3  Create a place to store the data from all the forms 
 // TODO 4 You got this 
