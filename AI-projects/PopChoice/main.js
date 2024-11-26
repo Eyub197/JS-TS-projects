@@ -63,7 +63,7 @@ peopleTimeForm.addEventListener('submit', event => {
     createPages(Number(peopleCountInput.value))
 })
 
-// TODO 1. change the svg tot image,
+// TODO 1. change the svg to image,
 // TODO 2. Render the correct html and test it forms 
 // TODO 3  Create a place to store the data from all the forms 
 // TODO 4 You got this 
