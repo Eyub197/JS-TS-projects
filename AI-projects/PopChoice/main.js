@@ -9,7 +9,8 @@ const button = document.querySelector(".cta")
 let personNHtml = []
 let formDataArray = []
 
-const createPersonForm = (i) => `     
+
+const createPersonForm = () => `     
       <label for="favorite-movie">What’s your favorite movie and why?</label>
       <textarea rows="4" name="favorite-movie" id="favorite-movie"></textarea>
 
@@ -80,7 +81,7 @@ const createPages = (count) => {
     for (let i = 1; i <= count; i++) {
         personNHtml.push({
             index: i,
-            form: createPersonForm(i)
+            form: createPersonForm()
         })
     }
 
@@ -98,4 +99,12 @@ button.addEventListener('click', () => {
     createPages(Number(peopleCountInput.value))
 })
 
-// TODO 4 You got this 
+//TODO Think about should you name every name of the inputs 1, 2 and the input name. It sounds better maybe
+//TODO from the form object create a prompt and with similarity search ask open ai to give you a movie suggestion
+// TODO from that movie I will have to render its poster, title and why from the gpt response
+// We can get the poster from the api linked in the scrim https://developer.themoviedb.org/docs/getting-started
+// We should get it from there
+// then create a simple template and reuse it for every movie recommendation
+// We can get more then one with the api think to give more then 2 and the similarity should be decant 
+// We will need new button but not a new form 
+ 
